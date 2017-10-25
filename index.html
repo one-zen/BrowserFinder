@@ -10,9 +10,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--[if lt IE 9]>
-		<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-		<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -94,8 +94,8 @@
             </div>
             <div class="item">
                 <picture>
-                    <source srcset="images/safari-big.png " media="(min-width: 800px)">
-                    <source srcset="images/safari-big.png" media="(min-width: 480px)">
+                    <source srcset="images/safari-big.jpg " media="(min-width: 800px)">
+                    <source srcset="images/safari-big.jpg" media="(min-width: 480px)">
                     <img srcset="images/safari-logo.png" alt="3 slide">
                 </picture>
                 <div class="carousel-caption">
@@ -131,30 +131,30 @@
         </div>
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">上一页</span>
-			</a>
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">上一页</span>
+            </a>
         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">下一页</span>
-			</a>
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">下一页</span>
+            </a>
     </div>
     <!-- end -->
     <!-- 三栏简介布局 -->
     <div class="container summary">
         <div class="row" id="summary-container">
             <div class="col-md-4">
-                <img class="img-circle" src="images/chrome.png" alt="chrome">
+                <img class="img-circle" src="images/chrome.jpg" alt="chrome">
                 <h2 class="feature-heading">Chrome</h2>
                 <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
                 <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
             </div>
-            <div class="col-md-4"><img class="img-circle" src="images/firefox.png" alt="firefox">
+            <div class="col-md-4"><img class="img-circle" src="images/firefox.jpg" alt="firefox">
                 <h2 class="feature-heading">Firefox</h2>
                 <p>Mozilla Firefox，中文名通常称为“火狐”或“火狐浏览器”，是一个开源网页浏览器。</p>
                 <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
             </div>
-            <div class="col-md-4"><img class="img-circle" src="images/safari.png" alt="safari">
+            <div class="col-md-4"><img class="img-circle" src="images/safari.jpg" alt="safari">
                 <h2 class="feature-heading">Safari</h2>
                 <p>Safari，是苹果计算机的最新操作系统Mac OS X中的浏览器。</p>
                 <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
@@ -174,7 +174,7 @@
                 <div class="row feature">
                     <div class="col-md-7">
                         <h2 class="feature-heading">Google Chrome <span
-							class="text-muted">使用最广的浏览器</span></h2>
+                            class="text-muted">使用最广的浏览器</span></h2>
                         <p class="lead">Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。 该浏览器是基于其他开源软件所撰写，包括WebKit，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。
                         </p>
                     </div>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="col-md-7">
                         <h2 class="feature-heading">Mozilla Firefox <span class="text-muted">美丽的狐狸</span>
-							</h2>
+                            </h2>
                         <p class="lead">Mozilla Firefox，中文名通常称为“火狐”或“火狐浏览器”，是一个开源网页浏览器， 使用Gecko引擎（非ie内核），支持多种操作系统如Windows、Mac和linux。
                         </p>
                     </div>
@@ -214,7 +214,7 @@
                     </div>
                     <div class="col-md-7">
                         <h2 class="feature-heading">Opera <span class="text-muted">小众但易用</span>
-							</h2>
+                            </h2>
                         <p class="lead">Opera浏览器，是一款挪威Opera Software ASA公司制作的支持多页面标签式浏览的网络浏览器。 是跨平台浏览器可以在Windows、Mac和Linux三个操作系统平台上运行。
                         </p>
                     </div>
@@ -261,7 +261,18 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script>
+    $(function() {
+        $('#demo-navbar .dropdown-menu a').click(function() {
+            var href = $(this).attr('href'); //取到链接属性
+            $("#tab-list a[href='" + href + "']").tab('show');
+        });
+        $('#demo-navbar .sketch a').click(function(e) {
+            e.preventDefault();
+            $(document).scrollTop($("#summary-container").offset().top - 70);
+        });
+    })
+    </script>
 </body>
 
 </html>
